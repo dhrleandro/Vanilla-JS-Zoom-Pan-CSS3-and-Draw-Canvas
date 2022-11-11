@@ -13,6 +13,8 @@ export default class ZoomPanContainer {
     window.addEventListener('pointermove', this.onmousemove.bind(this));
     window.addEventListener('wheel', this.onwheel.bind(this));
 
+    window.addEventListener('keypress', this.center.bind(this));
+
     this.mouseMiddleButton = false;
   }
 
@@ -62,5 +64,16 @@ export default class ZoomPanContainer {
     this.pointY = e.clientY - ys * this.scale;
 
     this.setTransform();
+  }
+
+  center() {
+    const rect = this.zoom.getBoundingClientRect();
+    this.pointX = (window.innerWidth/2) - rect.width/2;// - rect.width;// * canvas.width / rect.width;
+    this.pointY = (window.innerHeight/2) - rect.height/2;// - rect.height;// * canvas.height / rect.height;
+    this.setTransform();
+  }
+
+  getContainer() {
+    return this.zoom;
   }
 }
