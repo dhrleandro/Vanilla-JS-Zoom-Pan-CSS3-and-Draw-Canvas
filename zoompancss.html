@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom and Pan at Mouse without Canvas in CSS3</title>
+
+  <link rel="stylesheet" href="zoompancss.css">
+</head>
+
+<body>
+  <div class="app">
+    <div class="tools">
+      <p class="mouse">Mouse Coordinates</p>
+      <button id="pen">Pen</button>
+      <button id="move">Move</button>
+    </div>
+
+    <div id="zoomPanContainer">
+        <canvas id="canvas" width="480" height="480"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
