@@ -39,4 +39,8 @@ export default class CanvasDraw {
       this.ctx.fillRect(mouse.x - 2, mouse.y - 2, 4, 4);
     }
   }
+
+  getCanvas() {
+    return this.canvas;
+  }
 }
