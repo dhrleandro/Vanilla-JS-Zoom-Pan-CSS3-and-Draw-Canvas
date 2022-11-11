@@ -18,6 +18,7 @@ document.querySelector('#move').addEventListener('click', () => {
   document.getElementById('zoomPanContainer').style.cursor = 'grab';
 });
 
+/*
 // init fill canvas width chess patterns
 function drawChessPattern() {
   const container = zoomPanContainer.getContainer();
@@ -32,7 +33,6 @@ function drawChessPattern() {
   ctx.webkitImageSmoothingEnabled = false;
   ctx.mozImageSmoothingEnabled = false;
 
-  /*
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
   let rgb = [];
@@ -56,7 +56,26 @@ function drawChessPattern() {
   console.log(imageData.data);
   // Update the canvas with the new data
   ctx.putImageData(imageData, 0, 0);
-  */
 }
 
+
 drawChessPattern();
+*/
+
+function init() {
+  const container = zoomPanContainer.getContainer();
+  const canvas = canvasDraw.getCanvas();
+
+  canvas.style.width = canvas.width+'px';
+  canvas.style.maxWidth = canvas.width+'px';
+  canvas.style.height = canvas.height+'px';
+  canvas.style.maxHeight = canvas.height+'px';
+
+  container.style.width = canvas.width+'px';
+  container.style.maxWidth = canvas.width+'px';
+  container.style.height = canvas.height+'px';
+  container.style.maxHeight = canvas.height+'px';
+
+}
+
+init();
